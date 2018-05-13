@@ -48,7 +48,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: my_url_shortener_service_production
-  username: my_url_shortener_service
-  password: <%= ENV['MY_URL_SHORTENER_SERVICE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
