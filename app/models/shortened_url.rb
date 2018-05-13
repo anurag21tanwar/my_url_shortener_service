@@ -1,6 +1,18 @@
 class ShortenedUrl < ApplicationRecord
+
   BASE_URL_HOST = 'ma.io'
   REGEX_URL_HAS_PROTOCOL = Regexp.new('\Ahttp:\/\/|\Ahttps:\/\/', Regexp::IGNORECASE)
+
+  CHARSETS = {
+      alphanum: ('a'..'z').to_a + (0..9).to_a,
+      alphanumcase: ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
+  }
+
+  mattr_accessor :unique_key_length
+  self.unique_key_length = 6
+
+  mattr_accessor :charset
+  self.charset = :alphanumcase
 
   before_validation :clean_url
   before_create :generate_unique_key
@@ -63,7 +75,11 @@ class ShortenedUrl < ApplicationRecord
   end
 
   def self.generate_unique_key!
-    charset = Shortener.key_chars
-    (0...Shortener.unique_key_length).map{ charset[rand(charset.size)] }.join
+    charset = key_chars
+    (0...unique_key_length).map{ charset[rand(charset.size)] }.join
+  end
+
+  def self.key_chars
+    CHARSETS[charset]
   end
 end
