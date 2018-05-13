@@ -19,7 +19,7 @@ class ShortenedUrlsController < ApplicationController
 
     respond_to do |format|
       if shortened_url.present?
-        format.json { render json: { use_count: shortened_url.use_count, visitors_info: shortened_url.visitors_info }, status: :created }
+        format.json { render json: { use_count: shortened_url.use_count, visitors_info: shortened_url.visitors_info }, status: :ok }
       else
         format.json { render json: { url: 'not found' }, status: :not_found }
       end

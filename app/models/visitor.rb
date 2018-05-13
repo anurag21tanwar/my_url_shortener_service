@@ -1,3 +1,3 @@
 class Visitor < ApplicationRecord
-  validates :visited_at, :visitor_ip, :visitor_agent, presence: true
+  validates :visited_at, :visitor_ip, presence: true
 end

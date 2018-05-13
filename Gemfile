@@ -18,7 +18,10 @@ gem 'puma', '~> 3.7'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
