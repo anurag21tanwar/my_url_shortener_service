@@ -1,6 +1,10 @@
 class ShortenedUrlsController < ApplicationController
   before_action :find_unique_key, only: [:show]
 
+  def index
+    render json: {app: 'URL Shortener', owner: 'Anurag Tanwar'}
+  end
+
   def create
     @shortened_url = ShortenedUrl.new(url_params)
 
