@@ -32,7 +32,7 @@ class ShortenedUrlsController < ApplicationController
 
   def show
     if @shortened_url.nil?
-      redirect_to  :index
+      redirect_to  '/'
     else
       @shortened_url.save_info(request) if redirect_to @shortened_url.url
     end
