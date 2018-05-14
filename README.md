@@ -29,3 +29,6 @@ using rspec.
 
 Deployment Description.
 Application is deployed on Heroku with the url: https://tranquil-mountain-49830.herokuapp.com/
+
+Improvement Scope:
+I can add user authentication in request flow.
