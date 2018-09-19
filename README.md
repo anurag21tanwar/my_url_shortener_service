@@ -18,7 +18,7 @@ This endpoint excepts a parameter {url:''} and can return {shortened_url: ''} wi
 This endpoint is responsible in redirection to mail url if shortened_url(Unique_key) exists in the system. If shortened_url exists in the
 system, it will redirect to main url with 302 simultaneously storing info of visitor and use_count else redirect to index.
 3) GET stats '/stats'
-This endpoint excepts a parameter {url:''} i.e. shortened_url and can return information shortened_url like its use_count,
+This endpoint accepts a parameter {url:''} i.e. shortened_url and can return information shortened_url like its use_count,
 visitor info(visited_at, visitor_ip, visitor_agent(browser))
 4) GET index 'root'
 This end will show app info.
