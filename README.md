@@ -13,7 +13,7 @@ Shortened URL has an association with visitor as HAS MANY.
 Controller/Request Flow Description.
 It has mainly 3 endpoint.
 1) POST create '/create'
-This endpoint excepts a parameter {url:''} and can return {shortened_url: ''} with 201 as response if url is valid else render a 422.
+This endpoint accepts a parameter {url:''} and can return {shortened_url: ''} with 201 as response if url is valid else render a 422.
 2) GET show 'shortened_url' i.e. '<SCHEME>://ma.io/<UNIQUI_KEY>' or '/<UNIQUI_KEY>'
 This endpoint is responsible in redirection to mail url if shortened_url(Unique_key) exists in the system. If shortened_url exists in the
 system, it will redirect to main url with 302 simultaneously storing info of visitor and use_count else redirect to index.
